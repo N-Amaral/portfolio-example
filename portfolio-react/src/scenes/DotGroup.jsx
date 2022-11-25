@@ -6,12 +6,13 @@ const DotGroup = ({ selectedPage, setSelectedPage }) => {
 
   return (
     <div className="flex flex-col gap-6 fixed top-[60%] right-7">
-      {linkContent.map((el) => {
+      {linkContent.map((el, i) => {
         return (
           <AnchorLink
             className={`${selectedPage === el ? selectedStyles : "bg-dark-grey"} w-3 h-3 rounded-full`}
             href={`#${el}`}
             onClick={() => setSelectedPage(el)}
+            key={i}
           />
         );
       })}

@@ -31,8 +31,8 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
         {/*DESKTOP NAV */}
         {isAboveSmallScreens ? (
           <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
-            {linkContent.map((el) => {
-              return <Link page={el} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />;
+            {linkContent.map((el, i) => {
+              return <Link page={el} selectedPage={selectedPage} setSelectedPage={setSelectedPage} key={i} />;
             })}
           </div>
         ) : (
@@ -53,8 +53,8 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
 
             {/* MENU ITEMS */}
             <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
-              {linkContent.map((el) => {
-                return <Link page={el} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />;
+              {linkContent.map((el, i) => {
+                return <Link key={i} page={el} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />;
               })}
             </div>
           </div>
