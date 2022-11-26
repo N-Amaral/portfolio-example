@@ -49,7 +49,9 @@ const Testimonials = () => {
         {textContent.map((el, i) => {
           return (
             <motion.div
-              className={`bg-${el.boxColor} ${testimonialStyles} before:content-person${i + 1}`}
+              key={i}
+              /* issue with the img src for some reason*/
+              className={`bg-${el.boxColor} ${testimonialStyles} before:content-person2`}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
